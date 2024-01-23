@@ -4,7 +4,7 @@ pipeline {
     stages{
         stage('Code'){
             steps {
-                git url: '', branch: 'master'
+                git url: 'https://github.com/pawardhiraj561/dspgit-.git', branch: 'master'
             }
         }
         stage('Build and Test'){
@@ -15,8 +15,8 @@ pipeline {
         stage('Login and Push Image'){
             steps {
                 echo 'logging in to docker hub and pushing image..'
-                withCredentials([usernamePassword(credentialsId:'dockerHub',passwordVariable:'dockerHubPassword', usernameVariable:'dockerHubUser')]) {
-                    sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+                withCredentials([usernamePassword(pawardhiraj998@gmail.com:'dockerHub',passwordVariable:'admin@998  ', usernameVariable:'pawar199813')]) {
+                    sh "docker login -u ${env.pawar199813'} -p ${env.admin@998}"
                     sh "docker push trainwithshubham/node-todo-app-cicd:latest"
                 }
             }
